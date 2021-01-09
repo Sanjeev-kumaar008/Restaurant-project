@@ -4,10 +4,12 @@
 <head>
 
     <title>Ristorante Con Fusion: Home</title>
+        <!-- build:css css/main.css -->
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel = "stylesheet" href = "index.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+        <link rel = "stylesheet" href = "css/style.css">
+        <!-- endbuild -->
 
 
 </head>
@@ -26,12 +28,125 @@
                     <li class= "nav-item"><a href = "./index.html" class = "nav-link"><span class = "fa fa-info fa-lg"></span> About Us</a></li>
                     <li class= "nav-item"><a href = "./contactus.html" class = "nav-link"><span class = "fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
+                <span class = "navbar-text">
+                    <a id = "Loginbutton">
+                        <span class = "fa fa-sign-in">Login</span>
+                        
+                    </a>
+                </span>
             </div>
             
             
         </div>
 
     </nav>
+    <div id = "secmodal" class = "modal fade" role = "dialog">
+        <div class = "modal-dialog modal-lg" role = "content">
+            <div class = "modal-content">
+                <div class = "modal-header">
+                  <div class = "modal-title"><h3>Reserve a Table</h3></div>  
+                  <i id = "ReservecrossSign" role = "button" type = "button" class="fa fa-times close"></i>
+                </div>
+                <div class ="modal-body">
+                    <form>
+                        
+                            <div class = "form-group row ">
+                               <div class = "col-2 col-sm-2">
+                                   Number of persons
+                               </div>
+                               <div class = "col col-sm">
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;"  type="radio" name="optradio" checked> 1 </label>
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 2 </label>
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 3 </label>
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 4 </label>
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 5 </label>
+                                    <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 6 </label>
+ 
+                                </div>
+                            </div>
+                       
+                        <div class = "form-group row">
+                            <div class = "col-1 col-sm-1">
+                                Section
+                            </div>
+                                <div class = "offset-1 col col-sm row">
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success btn-sm active">
+                                          <input type="radio" name="options" id="option1" checked> Non-Smoking
+                                        </label>
+                                        <label class="btn btn-danger btn-sm">
+                                          <input type="radio" name="options" id="option2" > Smoking
+                                        </label>
+                                        
+                                      </div>
+                                </div>
+                            
+                        </div>
+                        <div class = "form-group row">
+                            <div class = "col-1 col-sm-2">
+                                Date and Time
+                            </div>
+                            <div class="form-group row ">
+                                <div class="col-12 col-sm-9 col-md-6 ">
+                                  
+                                  <input class="form-control offset-1" id="ex1" type="text" placeholder= "Date">
+                                </div>
+                                <div class="col-12 col-sm-9 col-md-6">
+                                  
+                                  <input class="form-control offset-1" id="ex2" type="text" placeholder = "Time">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class = "form-group row">
+                            <div class = "col-12 offset-2">
+                                <button type = "button" id = "cancel" class = "btn btn-secondary btn-md">Cancel</button>
+                                <button role = "button" type = "submit" class = "btn btn-primary btn-md">Reserve</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id  = "loginModal" class = "modal fade" role = "dialog">
+        <div  class = "modal-dialog modal-lg" role = "content">
+            <div class = "modal-content">
+                <div class = "modal-header">
+                    <h4 class = "modal-title" id = "loginButton"> Login</h4>
+                    <i id = "logincrossSign" role = "button" type = "button" class="fa fa-times close"></i>
+
+                </div>
+                <div class = "modal-body">
+                    <form>
+                        <div class = "form-row">
+                            <div  class = "form-group col-sm-4">
+                                <label class = "sr-only" for = "username">Username</label>
+                                <input class = "form-control form-control-sm mr-1" type = "text" placeholder = "Username" id = "username">
+                            </div>
+                            <div  class = "form-group col-sm-4">
+                                <label class = "sr-only" for = "password">Username</label>
+                                <input class = "form-control form-control-sm mr-1" type = "password" placeholder = "Password" id = "password">
+                            </div>
+                            <div class = "col-sm">
+                                <div class = "form-check">
+                                    <input class = "form-check-input" style="cursor: pointer;" type = "checkbox">
+                                    <label class = "form-check-label">Remember Me</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div  class = "form-row">
+                            <button type = "button"  id = "logincancel" class = "btn btn-secondary btn-sm ml-auto">Cancel</button>
+                            <button type = "submit" class = "btn btn-primary btn-sm ml-1">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
 
     <header class="jumbotron">
         <div class="container">
@@ -43,9 +158,64 @@
                 <div class="col-12 col-sm">
                     <img src = "img/logo.png" class = "fluid">
                 </div>
+                <div class = "col col-sm">
+                    <a id = "ReserveButton" ><button class = "btn btn-warning text-black col-md-9" >Reserve Table</button></a>
+                </div>
             </div>
         </div>
     </header>
+    <div class = "container">
+        <div class = "row row-content align-self-center">
+            <div class = "col"> 
+                <div id = "mycarousel" class = "carousel slide" data-ride = "carousel">
+                    <div class = "carousel-inner" role = "listbox">
+                        <div class = "carousel-item active">
+                            <img class ="d-block image fluid" src = "img/uthappizza.png" alt = "uthappizza">
+                            <div class = "carousel-caption d-none d-md-block">
+                                <h2 >Uthappizza <span class="badge badge-danger">HOT</span>  <span class="badge badge-pill badge-secondary">$4.99</span></h2>
+                                <p>A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
+                            </div>
+                        </div>
+                        <div class = "carousel-item ">
+                            <img class ="d-block image fluid" src = "img/buffet.png" alt = "buffet">
+                            <div class = "carousel-caption d-none d-md-block">
+                                <h2>Weekend Grand Buffet  <span class="badge badge-danger">NEW</span></h2>
+                                <p>Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+                            </div>
+                        </div>
+                        <div class = "carousel-item ">
+                            <img class ="d-block image fluid" src = "img/alberto.png" alt = "alberto">
+                            <div class = "carousel-caption d-none d-md-block">
+                                <h2>Alberto Somayya</h2>
+                                <h4>Executive Chef</h4>
+                                <p class = "d-none d-sm-block">Award winning three-star Michelin chef with wide International experience having worked closely with whos-who in the culinary world, he specializes in creating mouthwatering Indo-Italian fusion experiences. </p>
+                            </div>
+                        </div>
+                        <ol  class ="carousel-indicators">
+                            <li data-target= "#mycarousel" data-slide-to = "0" class = "active"></li>
+                            <li data-target = "#mycarousel" data-slide-to = "1"></li>
+                            <li data-target = "#mycarousel" data-slide-to = "2"></li>
+                        </ol>
+                        <a href = "#mycarousel" role = "button" class = "carousel-control-prev" data-slide = "prev">
+                            <span class = "carousel-control-prev-icon"></span>
+                        </a>
+                        <a href = "#mycarousel" role = "button" class = "carousel-control-next" data-slide = "next">
+                            <span class = "carousel-control-next-icon"></span>
+                        </a>
+                      
+                        <button class = "btn btn-danger btn-sm" id = "carouselButton">
+                            <span class = "fa fa-pause"></span>
+                        </button>
+                           
+                       
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
 
     <div class= "container" >
         <div class ="row row-content align-items-center">
@@ -58,7 +228,7 @@
                 <div class = "media">
                     <img src = "img/uthappizza.png" class = "d-flex img-thumbnail mr-3 align-self-center" alt = "uthtappizza">
                     <div class = "media-body">
-                        <h2 class = "mt-0">Uthappizza</h2>
+                        <h2 class = "mt-0">Uthappizza <span class="badge badge-danger">HOT</span>  <span class="badge badge-pill badge-secondary">$4.99</span></h2>
                 <p class = "d-none d-sm-block">A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.</p>
             
                     </div>
@@ -69,12 +239,17 @@
 
 
         <div class ="row row-content align-items-center">
-            <div class ="col-12 col-sm-4 col-md-3">
+            <div class ="col-10 col-sm-4 col-md-3">
                 <h3>This Month's Promotions</h3>
             </div>
-            <div class= "col col-sm col-md">
-                <h2>Weekend Grand Buffet</h2>
+            <div class= "col-7 col-sm-7 col-md-7">
+                <h2 style="display: inline;">Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
                 <p class = "d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
+            </div>
+            <div class = "col col-sm col-md">
+                
+                    <img src = "img/buffet.png" class = "d-flex mr-3 img-thumbnail align-self-center">
+                
             </div>
         </div>
 
@@ -94,13 +269,74 @@
                 
             </div>
         </div>
-    </div>
+       <div class = "col-12 col-sm-6 col-md-6 container">
+           <div class = "card" id = "card2">
+               <div class = "card-header bg-warning text-white ">
+                   <h3>Reserve a Table</h3>
+                </div>
+                <div class = "card-body ">
+                    <div class = "row">
+                        <div class = "col-12 col-sm-3">
+                            Number of persons
+                        
+                        </div>
+                        <div class = "col-12 col-sm-9" >
+                         <form >
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;"  type="radio" name="optradio" checked> 1 </label>
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 2 </label>
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 3 </label>
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 4 </label>
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 5 </label>
+                          <label class = "radio-inline" style = "margin-right : 10px"><input style = "height: 10px;" type="radio" name="optradio" checked> 6 </label>
+                         </form> 
+                     
+                        </div>
+                    </div><br>
+                    <div class = "row">
+                        <div class = "col-12 col-sm-3">
+                            Date and Time 
+                        </div>
+                    <div class = "col-12 col-sm-12 col-md-8 row">
+                        <div class="form-group row ">
+                            <div class="col-12 col-sm-9 col-md-6 ">
+                              
+                              <input class="form-control offset-1" id="ex1" type="text" placeholder= "Date">
+                            </div>
+                            <div class="col-12 col-sm-9 col-md-6">
+                              
+                              <input class="form-control offset-1" id="ex2" type="text" placeholder = "Time">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class = "container">
+                    <div class = " row col-12 col-sm-3 offset-md-3">
+                        <button class = "btn btn-primary text-white">Reserve</button>
+                    
+                    </div>
+                    </div>
+
+                    </div>
+                </div>
+        
+                
+                
+                
+                
+                   
+                
+                
+                
+            </div>
+       </div>
+    </div><br><br>
+    
 
 
     <footer class="footer">
         <div class="container">
-            <div class = "row" >             
-                <div class="col-12 col-sm-2">
+            <div class = "row align-items-center" >             
+                <div class="col-4 offset-1 col-sm-2">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#"><span class = "fa fa-home"></span> Home</a></li>
@@ -109,7 +345,7 @@
                         <li><a href="#"><span class = "fa fa-address-card"></span> Contact</a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-sm-5">
+                <div class="col-7 col-sm-5">
                     <h5>Our Address</h5>
                     <address>
 		              121, Clear Water Bay Road<br>
@@ -120,7 +356,7 @@
 		              <i class ="fa fa-envelope"></i>  <a href="mailto:confusion@food.net">confusion@food.net</a>
 		           </address>
                 </div>
-                <div class="col-12 col-sm-5">
+                <div class="col-12 col-sm-4 align-self-center">
                     <div class="text-center">
                         <a class = "btn btn-social-icon btn-google" href="http://google.com/+"><i class = "fa fa-google-plus fa-lg">  </i>  </a>
                         <a class = "btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="><i class = "fa fa-facebook fa-lg">  </i>  </a>
@@ -139,9 +375,14 @@
         </div>
     </footer>
 </body>
+<!-- build:js js/main.js -->
 <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src = "js/script.js"></script>
+<!-- endbuild -->
+
+
 
 </html>
 
